@@ -1,5 +1,16 @@
 const container = document.getElementById("media-container");
 
+// Cursor heart effect
+document.addEventListener("mousemove", (e) => {
+    const heart = document.createElement("span");
+    heart.classList.add("heart-cursor");
+    heart.innerText = "❤️";
+    heart.style.left = e.clientX + "px";
+    heart.style.top = e.clientY + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 1000);
+});
+
 // 🔴 ADD YOUR FILE NAMES HERE
 const photos = [
     "p1.jpg",
@@ -56,12 +67,8 @@ videos.forEach(videoFile => {
     container.appendChild(video);
 });
 
-document.getElementById("startMusic").addEventListener("click",()=>{
-    const music=document.getElementById("bgMusic");
+document.getElementById("startMusic").addEventListener("click", () => {
+    const music = document.getElementById("bgMusic");
     music.play();
-});
-
-button.addEventListener("click",()=>{
-    music.play();
-    button.style.display="none";
+    document.getElementById("startMusic").style.display = "none";
 });
