@@ -94,7 +94,7 @@ img:hover, video:hover {
     transition: 0.3s ease;
     cursor: pointer;
 }
-#starMusic:hover{
+#startMusic:hover{
     background-color: darkred; /*hover*/
     box-shadow: 0 0 20px red;
     transform: scale(1.05);
