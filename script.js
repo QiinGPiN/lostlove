@@ -52,18 +52,49 @@ const videos = [
     "v9.mp4"
 ];
 
+// Lightbox setup
+const lightbox = document.createElement("div");
+lightbox.id = "lightbox";
+lightbox.innerHTML = `<span id="lightbox-close">✕</span><div id="lightbox-content"></div>`;
+document.body.appendChild(lightbox);
+
+function openLightbox(element) {
+    const content = document.getElementById("lightbox-content");
+    content.innerHTML = "";
+    const clone = element.cloneNode(true);
+    if (clone.tagName === "VIDEO") { clone.controls = true; clone.autoplay = true; }
+    content.appendChild(clone);
+    lightbox.classList.add("active");
+}
+
+document.getElementById("lightbox-close").addEventListener("click", () => {
+    lightbox.classList.remove("active");
+    document.getElementById("lightbox-content").innerHTML = "";
+});
+
+lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+        lightbox.classList.remove("active");
+        document.getElementById("lightbox-content").innerHTML = "";
+    }
+});
+
 // Load Photos
 photos.forEach(photo => {
     const img = document.createElement("img");
-    img.src =`assets/photos/${photo}`;
+    img.src = `assets/photos/${photo}`;
+    img.style.cursor = "pointer";
+    img.addEventListener("click", () => openLightbox(img));
     container.appendChild(img);
 });
 
 // Load Videos
 videos.forEach(videoFile => {
     const video = document.createElement("video");
-    video.src =`assets/videos/${videoFile}`;
+    video.src = `assets/videos/${videoFile}`;
     video.controls = true;
+    video.style.cursor = "pointer";
+    video.addEventListener("click", (e) => { e.preventDefault(); openLightbox(video); });
     container.appendChild(video);
 });
 
