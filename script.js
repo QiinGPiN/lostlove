@@ -42,7 +42,7 @@ document.getElementById("enter-btn").addEventListener("click", () => {
 
     const validUsers = ["annette","annette mutuku","ronoh","kibet","annet","Kingpin","don"];
     const correctDD = "13";
-    const correctMM = "8";
+    const correctMM = "08";
     const correctYYYY = "2025";
 
     if (!validUsers.includes(username)) {
