@@ -30,7 +30,7 @@ body {
 }
 
 #loading-title {
-    font-size: 6rem;
+    font-size: 9rem;
     color: crimson;
     text-shadow: 0 0 40px red, 0 0 80px darkred;
     letter-spacing: 10px;
@@ -39,8 +39,8 @@ body {
 }
 
 #loading-bar-wrap {
-    width: 250px;
-    height: 4px;
+    width: 500px;
+    height: 10px;
     background: #1a0000;
     border-radius: 10px;
     margin: 20px auto;
@@ -61,7 +61,7 @@ body {
     color: #aa0000;
     font-style: italic;
     letter-spacing: 2px;
-    font-size: 0.9rem;
+    font-size: 4rem;
 }
 
 /* =====================
