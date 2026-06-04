@@ -1,0 +1,404 @@
+/* =====================
+   BASE
+   ===================== */
+body {
+    margin: 0;
+    font-family: Georgia, Serif;
+    font-style: Italic;
+    background: #0a0a0a;
+    color: #ffcccc;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* =====================
+   LOADING SCREEN
+   ===================== */
+#loading-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #0a0a0a;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease;
+}
+
+#loading-content {
+    text-align: center;
+}
+
+#loading-title {
+    font-size: 8rem;
+    color: crimson;
+    text-shadow: 0 0 40px red, 0 0 80px darkred;
+    letter-spacing: 10px;
+    animation: heartbeat 1.8s ease-in-out infinite;
+    margin-bottom: 30px;
+}
+
+#loading-bar-wrap {
+    width: 500px;
+    height: 10px;
+    background: #1a0000;
+    border-radius: 10px;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 1px solid darkred;
+}
+
+#loading-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, darkred, crimson);
+    box-shadow: 0 0 10px red;
+    transition: width 0.1s linear;
+    border-radius: 10px;
+}
+
+#loading-text {
+    color: #aa0000;
+    font-style: italic;
+    letter-spacing: 2px;
+    font-size: 3rem;
+}
+
+/* =====================
+   PASSWORD SCREEN
+   ===================== */
+#password-screen {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #0a0a0a;
+    z-index: 99998;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease;
+}
+
+#password-screen.active {
+    display: flex;
+}
+
+#password-box {
+    background: linear-gradient(180deg, #0d0000, #1a0000);
+    border: 1px solid crimson;
+    box-shadow: 0 0 40px rgba(220,20,60,0.3);
+    padding: 60px 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+#password-box h2 {
+    color: crimson;
+    font-size: 5rem;
+    letter-spacing: 3px;
+    font-style: italic;
+    text-shadow: 0 0 15px red;
+    margin-bottom: 10px;
+}
+
+#username-input {
+    width: 80%;
+    padding: 12px;
+    margin: 15px auto 5px;
+    display: block;
+    background: #0a0a0a;
+    border: 1px solid crimson;
+    color: #ffcccc;
+    font-family: Georgia, serif;
+    font-size: 4rem;
+    border-radius: 6px;
+    text-align: center;
+    letter-spacing: 2px;
+    outline: none;
+}
+
+#username-input:focus {
+    box-shadow: 0 0 10px red;
+}
+
+.date-label {
+    color: #aa0000;
+    font-style: italic;
+    margin: 15px 0 8px;
+    letter-spacing: 2px;
+}
+
+#date-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+#date-inputs span {
+    color: crimson;
+    font-size: 1.5rem;
+}
+
+.date-part {
+    width: 55px;
+    padding: 10px 5px;
+    background: #0a0a0a;
+    border: 1px solid crimson;
+    color: #ffcccc;
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    text-align: center;
+    outline: none;
+}
+
+.date-part:focus {
+    box-shadow: 0 0 10px red;
+}
+
+#enter-btn {
+    background: linear-gradient(black, darkred);
+    color: crimson;
+    border: 10px solid crimson;
+    padding: 20px 50px;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 6rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px rgba(220,20,60,0.3);
+}
+
+#enter-btn:hover {
+    box-shadow: 0 0 25px red;
+    transform: scale(1.05);
+}
+
+#error-msg {
+    color: #ff4444;
+    font-style: italic;
+    margin-top: 12px;
+    min-height: 20px;
+    font-size: 7rem;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-10px); }
+    40% { transform: translateX(10px); }
+    60% { transform: translateX(-8px); }
+    80% { transform: translateX(8px); }
+}
+
+#password-box.shake {
+    animation: shake 0.5s ease;
+}
+
+/* =====================
+   MAIN SITE
+   ===================== */
+#main-site.hidden {
+    display: none;
+}
+
+header {
+    padding: 40px;
+}
+
+h1 {
+    font-size: 4rem;
+    color: crimson;
+    text-shadow: 0 0 20px red;
+    letter-spacing: 3px;
+    font-style: oblique;
+    animation: heartbeat 1.8s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%   { text-shadow: 0 0 10px red; transform: scale(1); }
+    14%  { text-shadow: 0 0 40px crimson; transform: scale(1.05); }
+    28%  { text-shadow: 0 0 10px red; transform: scale(1); }
+    42%  { text-shadow: 0 0 40px crimson; transform: scale(1.04); }
+    70%  { text-shadow: 0 0 10px red; transform: scale(1); }
+    100% { text-shadow: 0 0 10px red; transform: scale(1); }
+}
+
+.subtitle {
+    font-style: italic;
+    color: #aa0000;
+}
+
+.about {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: aqua;
+}
+
+.gallery h2 {
+    color: crimson;
+    margin-top: 40px;
+}
+
+#media-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.KinGPiN {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: rgb(19, 205, 238);
+    font-family: cursive;
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-style: italic;
+    text-shadow: 0 0 10px rgba(190, 16, 16, 0.568);
+}
+
+img, video {
+    width: 300px;
+    border: 3px solid crimson;
+    box-shadow: 0 0 20px red;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+}
+
+img:hover, video:hover {
+    transform: scale(1.05);
+}
+
+#startMusic {
+    background: linear-gradient(black, darkred);
+    color: brown;
+    border: none;
+    padding: 15px 30px;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 30px;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+#startMusic:hover {
+    background-color: darkred;
+    box-shadow: 0 0 20px red;
+    transform: scale(1.05);
+}
+
+.gothic-divider {
+    border: none;
+    height: 2px;
+    width: 60%;
+    margin: 40px auto;
+    background: linear-gradient(to right, transparent, crimson, transparent);
+}
+
+/* =====================
+   SCROLL ANIMATIONS
+   ===================== */
+.scroll-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =====================
+   HEART CURSOR
+   ===================== */
+.heart-cursor {
+    position: fixed;
+    pointer-events: none;
+    font-size: 1.5rem;
+    animation: floatUp 1s ease forwards;
+    z-index: 99999;
+    color: crimson;
+    text-shadow: 0 0 8px red;
+}
+
+@keyframes floatUp {
+    0%   { opacity: 1; transform: translateY(0) scale(1); }
+    100% { opacity: 0; transform: translateY(-60px) scale(0.5); }
+}
+
+/* =====================
+   LIGHTBOX
+   ===================== */
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox.active { display: flex; }
+
+#lightbox-content img,
+#lightbox-content video {
+    max-width: 95vw;
+    max-height: 80vh;
+    width: auto;
+    border: 2px solid crimson;
+    box-shadow: 0 0 40px red;
+    border-radius: 10px;
+}
+
+#lightbox-close {
+    position: fixed;
+    top: 20px; right: 25px;
+    font-size: 2.5rem;
+    color: crimson;
+    cursor: pointer;
+    z-index: 10000;
+    text-shadow: 0 0 10px red;
+}
+
+#lightbox-nav {
+    position: fixed;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    z-index: 10001;
+}
+
+#lb-prev, #lb-next {
+    background: rgba(0,0,0,0.6);
+    color: crimson;
+    border: 2px solid crimson;
+    font-size: 2rem;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    text-shadow: 0 0 10px red;
+    box-shadow: 0 0 15px red;
+}
+
+#lb-prev:hover, #lb-next:hover {
+    background: crimson;
+    color: black;
+}
