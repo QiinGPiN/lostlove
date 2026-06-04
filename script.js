@@ -98,8 +98,19 @@ videos.forEach(videoFile => {
     container.appendChild(video);
 });
 
-document.getElementById("startMusic").addEventListener("click", () => {
-    const music = document.getElementById("bgMusic");
-    music.play();
-    document.getElementById("startMusic").style.display = "none";
+const btn=document.getElementById("startMusic");
+const music=document.getElementById("bgMusic");
+
+btn.addEventListener("click",()=>{
+
+    console.log("Button clicked");
+
+    music.play()
+    .then(()=>{
+        console.log("Music playing");
+    })
+    .catch(err=>{
+        console.log("Error:",err);
+    });
+
 });
