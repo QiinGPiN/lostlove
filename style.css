@@ -94,7 +94,7 @@ img:hover, video:hover {
     transition: 0.3s ease;
     cursor: pointer;
 }
-#startMusic:hover{
+#starMusic:hover{
     background-color: darkred; /*hover*/
     box-shadow: 0 0 20px red;
     transform: scale(1.05);
@@ -154,3 +154,31 @@ body{
     z-index: 10000;
     text-shadow: 0 0 10px red;
     }
+
+/* Updated lightbox nav */
+#lightbox-nav {
+    position: fixed;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    z-index: 10001;
+}
+
+#lb-prev, #lb-next {
+    background: rgba(0,0,0,0.6);
+    color: crimson;
+    border: 2px solid crimson;
+    font-size: 2rem;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    text-shadow: 0 0 10px red;
+    box-shadow: 0 0 15px red;
+}
+
+#lb-prev:hover, #lb-next:hover {
+    background: crimson;
+    color: black;
+}
