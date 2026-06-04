@@ -17,6 +17,16 @@ h1 {
     text-shadow: 0 0 20px red;
     letter-spacing: 3px;
     font-style: oblique;
+    animation: heartbeat 1.8s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%   { text-shadow: 0 0 10px red; transform: scale(1); }
+    14%  { text-shadow: 0 0 40px crimson; transform: scale(1.05); }
+    28%  { text-shadow: 0 0 10px red; transform: scale(1); }
+    42%  { text-shadow: 0 0 40px crimson; transform: scale(1.04); }
+    70%  { text-shadow: 0 0 10px red; transform: scale(1); }
+    100% { text-shadow: 0 0 10px red; transform: scale(1); }
 }
 
 .subtitle {
