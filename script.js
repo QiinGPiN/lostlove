@@ -40,10 +40,10 @@ document.getElementById("enter-btn").addEventListener("click", () => {
     const yyyy = document.getElementById("yyyy").value.trim();
     const errorMsg = document.getElementById("error-msg");
 
-    const validUsers = ["annette", "don"];
-    const correctDD = "01";
-    const correctMM = "12";
-    const correctYYYY = "2025";
+    const validUsers = ["annette","annette mutuku","ronoh","kibet","annet","Kingpin","don"];
+    const correctDD = "01","28";
+    const correctMM = "12","8","10";
+    const correctYYYY = "2025","2005";
 
     if (!validUsers.includes(username)) {
         errorMsg.innerText = "⚠ I don't know you...";
