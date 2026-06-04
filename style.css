@@ -69,8 +69,9 @@ h1 {
     font-family: cursive
 }
 
-img, video {
-    width: 300px;
+img,video{
+    width:100%;
+    max-width:350px;
     border: 3px solid crimson;
     box-shadow: 0 0 20px red;
     border-radius: 10px;
