@@ -110,3 +110,17 @@ body{
     background: #0a0a0a
     url(`https:www.transparenttextures.com/patterns/dark-mosaic.png`);
 }
+.heart-cursor {
+    position: fixed;
+    pointer-events: none;
+    font-size: 1.2rem;
+    animation: floatUp 1s ease forwards;
+    z-index: 99999;
+    color: crimson;
+    text-shadow: 0 0 8px red;
+}
+
+@keyframes floatUp {
+    0%   { opacity: 1; transform: translateY(0) scale(1); }
+    100% { opacity: 0; transform: translateY(-60px) scale(0.5); }
+}
