@@ -7,62 +7,77 @@
     <meta name="google-site-verification" content="KTbL-jYSHKoCBajY7KBDjPgVzHwl9_k32xixKMwk6Ng" />
 </head>
 <body>
-    <div class="overlay"></div>
 
-    <header>
-        <hr class="gothic-divider">
-        <h1 id="animated-title">Annette Mutuku</h1>
-        <hr class="gothic-divider">
-        <p class="subtitle">A Crimson heart in Shadows</p>
-        <p class="subtitle">Kamba beauty at its best</p>
-        <p class="subtitle">Short but full of love</p>
-    </header>
-
-    <hr class="gothic-divider">
-
-    <section class="about">
-        <p>
-            She walks like midnight poetry — dark, divine, and dangerously soft.
-            A gothic baddie with crimson dreams and chaos in her lipstick.
-        </p>
-        <p>
-            Young, yet ancient in energy.
-            She is roses dipped in blood, velvet in candlelight,
-            her soul reeks of a thorny aura.
-        </p>
-        <p>
-            In her world, love is dramatic,
-            loyalty is eternal,
-            and beauty is carved from shadows,
-            the goosebumps I get when I see stars alligning with her initials.
-        </p>
-    </section>
-    
-    <hr class="gothic-divider">
-
-    <audio id="bgMusic" loop>
-        <source src="music/star.m4a" type="audio/mp4">
-    </audio>
-    <button id="startMusic">Through Don's lens</button>
-
-    <hr class="gothic-divider">
-<section class="gallery">
-        <div id="media-container"></div>
-        <div class="KinGPiN">
-            
-        <hr class="gothic-divider">
-        <h2>Her Dark Gallery</h2>
-        <hr class="gothic-divider">
-            <hr class="gothic-divider">
-            <p>
-                I am sorry I wasn't the best version of myself..I still loved you..
-                I just needed to grow up a little more. we both made mistakes and we both failed
-                But that doesn't mean we have to let go forever..lets forgive each other and move forward.
-                I miss you and I am sorry.
-            </p>
-            <hr class="gothic-divider">
+    <!-- LOADING SCREEN -->
+    <div id="loading-screen">
+        <div id="loading-content">
+            <h1 id="loading-title">A.M</h1>
+            <div id="loading-bar-wrap"><div id="loading-bar"></div></div>
+            <p id="loading-text">entering the darkness...</p>
         </div>
-</section>
+    </div>
+
+    <!-- PASSWORD SCREEN -->
+    <div id="password-screen">
+        <div id="password-box">
+            <h2>Who are you?</h2>
+            <hr class="gothic-divider">
+            <input type="text" id="username-input" placeholder="Enter your name" maxlength="20" />
+            <p class="date-label">Our date</p>
+            <div id="date-inputs">
+                <input type="text" class="date-part" id="dd" placeholder="DD" maxlength="2" />
+                <span>/</span>
+                <input type="text" class="date-part" id="mm" placeholder="MM" maxlength="2" />
+                <span>/</span>
+                <input type="text" class="date-part" id="yyyy" placeholder="YYYY" maxlength="4" />
+            </div>
+            <button id="enter-btn">Enter</button>
+            <p id="error-msg"></p>
+        </div>
+    </div>
+
+    <!-- MAIN SITE -->
+    <div id="main-site" class="hidden">
+        <div class="overlay"></div>
+
+        <header class="scroll-fade">
+            <hr class="gothic-divider">
+            <h1 id="animated-title">Annette Mutuku</h1>
+            <hr class="gothic-divider">
+            <p class="subtitle">A Crimson heart in Shadows</p>
+            <p class="subtitle">Kamba beauty at its best</p>
+            <p class="subtitle">Short but full of love</p>
+        </header>
+
+        <hr class="gothic-divider">
+
+        <section class="about scroll-fade">
+            <p>She walks like midnight poetry — dark, divine, and dangerously soft. A gothic baddie with crimson dreams and chaos in her lipstick.</p>
+            <p>Young, yet ancient in energy. She is roses dipped in blood, velvet in candlelight, her soul reeks of a thorny aura.</p>
+            <p>In her world, love is dramatic, loyalty is eternal, and beauty is carved from shadows, the goosebumps I get when I see stars alligning with her initials.</p>
+        </section>
+
+        <section class="gallery">
+            <hr class="gothic-divider scroll-fade">
+            <h2 class="scroll-fade">Her Dark Gallery</h2>
+            <hr class="gothic-divider scroll-fade">
+            <div id="media-container"></div>
+            <div class="KinGPiN scroll-fade">
+                <hr class="gothic-divider">
+                <p>I am sorry I wasn't the best version of myself..I still loved you.. I just needed to grow up a little more. we both made mistakes and we both failed But that doesn't mean we have to let go forever..lets forgive each other and move forward. I miss you and I am sorry.</p>
+            </div>
+        </section>
+
+        <hr class="gothic-divider">
+
+        <audio id="bgMusic" loop>
+            <source src="music/star.m4a" type="audio/mp4">
+        </audio>
+        <button id="startMusic" class="scroll-fade">Through Don's lens</button>
+
+        <hr class="gothic-divider">
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
