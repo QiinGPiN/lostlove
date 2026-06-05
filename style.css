@@ -328,7 +328,7 @@ img:hover, video:hover {
 .heart-cursor {
     position: fixed;
     pointer-events: none;
-    font-size: 8rem;
+    font-size: 14rem;
     animation: floatUp 1s ease forwards;
     z-index: 99999;
     color: crimson;
